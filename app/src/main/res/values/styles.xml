@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="customfontstyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/kanit_regular</item>
+    </style>
+    <style name="separatorAppereance">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">#707070</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+</resources>
