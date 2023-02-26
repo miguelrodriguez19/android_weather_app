@@ -16,10 +16,4 @@ interface ApiService {
         @Query("exclude") exclude: String = ApiRest.exclude
     ): Response<WeatherResponse>
 
-    @GET("2.5/onecall?")
-    suspend fun getCity(
-        @Query("lat") lat: Double,
-        @Query("lon") lon: Double,
-        @Query("appid") appid: String = ApiRest.appid,
-    ): Response<WeatherResponse>
 }
