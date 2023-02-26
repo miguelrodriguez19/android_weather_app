@@ -2,4 +2,15 @@
     <string name="app_name">UD6 - El Tiempo</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="accept_permissions">You must accept all permissions.</string>
+    <string name="max_temperature">Max ºC</string>
+    <string name="min_temperature">Min ºC</string>
+    <string name="WX">WX</string>
+    <string name="humidity_tittle">Humidity</string>
+    <string name="feels_like_tittle">Feels like</string>
+    <string name="uv_tittle">UV</string>
+    <string name="pressure_tittle">Pressure</string>
+    <string name="wind_tittle">Wind:</string>
+    <string name="sunrise_tittle">Sunrise</string>
+    <string name="sunset_tittle">Sunset</string>
 </resources>

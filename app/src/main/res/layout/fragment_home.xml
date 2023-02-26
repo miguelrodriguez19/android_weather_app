@@ -4,445 +4,425 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5E86FF"
+    android:background="@color/main_blue"
     android:fillViewport="true"
     tools:context=".weather.HomeFragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <RelativeLayout
-            android:id="@+id/rl_allCards"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:paddingStart="16dp"
-            android:paddingTop="16dp"
-            android:paddingEnd="16dp">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tv_actualDay"
-                style="@style/customfontstyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="25 Febrero 2015"
-                android:textSize="20sp" />
-
-            <LinearLayout
-                android:id="@+id/ll_mainPanel"
+            <RelativeLayout
+                android:id="@+id/rl_allCards"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_below="@+id/tv_actualDay"
-                android:layout_marginBottom="15dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingStart="10dp">
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/tv_actualDay"
+                    style="@style/customfontstyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Date"
+                    android:textSize="20sp" />
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|start"
-                    android:orientation="vertical"
-                    android:paddingStart="15dp">
+                    android:id="@+id/ll_mainPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_below="@+id/tv_actualDay"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp">
 
-                    <TextView
-                        android:id="@+id/tv_city"
-                        style="@style/customfontstyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kanit_semibold"
-                        android:text="Madrid"
-                        android:textSize="25sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:orientation="vertical"
+                        android:paddingStart="15dp">
 
-                    <TextView
-                        android:id="@+id/tv_temperature"
-                        style="@style/customfontstyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kanit_bold"
-                        android:text="+27º"
-                        android:textSize="60sp" />
+                        <TextView
+                            android:id="@+id/tv_city"
+                            style="@style/customfontstyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/kanit_semibold"
+                            android:text="City"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:id="@+id/tv_temperature"
+                            style="@style/customfontstyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/kanit_bold"
+                            android:text="ºC"
+                            android:textSize="50sp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_temperatureIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:scaleType="fitCenter" />
 
                 </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/iv_temperatureIcon"
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1.5"
-                    android:padding="10dp"
-                    android:src="@color/purple_500" />
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_hourly_temperatures"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ll_mainPanel"
-                tools:listitem="@layout/item_hourly_temperatures"
-                android:layout_marginBottom="10dp"/>
-
-            <LinearLayout
-                android:id="@+id/ll_groupPanels"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rv_hourly_temperatures"
-                android:orientation="horizontal">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_hourly_temperatures"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_mainPanel"
+                    android:layout_marginBottom="10dp"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/item_hourly_temperatures" />
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:id="@+id/ll_groupPanels"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:layout_below="@id/rv_hourly_temperatures"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:backgroundTint="@color/navy_blue"
+                            app:cardCornerRadius="20dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingStart="6dp"
+                                android:paddingEnd="4dp">
+
+                                <TextView
+                                    style="@style/customfontstyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center|start"
+                                    android:fontFamily="@font/kanit_light"
+                                    android:text="@string/wind_tittle" />
+
+                                <TextView
+                                    android:id="@+id/tv_windSpeed"
+                                    style="@style/customfontstyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center|start"
+                                    android:fontFamily="@font/kanit_light"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_puntos_cardinales"
+                                    app:tint="@color/white" />
+
+                                <ImageView
+                                    android:id="@+id/iv_windDeg"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_centerInParent="true"
+                                    android:rotation="-90"
+                                    android:scaleX="0.8"
+                                    android:scaleY="0.4"
+                                    android:src="@drawable/ic_arrow_24"
+                                    android:translationX="2.5dp"
+                                    app:tint="@color/white" />
+
+                            </RelativeLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/navy_blue"
+                            app:cardCornerRadius="20dp">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="start|center"
+                                android:layout_margin="8dp"
+                                android:src="@drawable/ic_sunset"
+                                app:tint="@color/white" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="30dp"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center|start"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tv_sunrise"
+                                        style="@style/customfontstyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="6dp"
+                                        android:fontFamily="@font/kanit_light" />
+
+                                    <TextView
+                                        style="@style/customfontstyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/kanit_extralight"
+                                        android:text="@string/sunrise_tittle"
+                                        android:textSize="18sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center|start"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tv_sunset"
+                                        style="@style/customfontstyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="6dp"
+                                        android:fontFamily="@font/kanit_light" />
+
+                                    <TextView
+                                        style="@style/customfontstyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/kanit_extralight"
+                                        android:text="@string/sunset_tittle"
+                                        android:textSize="18sp" />
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
                         android:backgroundTint="@color/navy_blue"
                         app:cardCornerRadius="20dp">
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:paddingStart="8dp">
-
-                            <TextView
-                                style="@style/customfontstyle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|start"
-                                android:fontFamily="@font/kanit_light"
-                                android:text="Wind:" />
-
-                            <TextView
-                                android:id="@+id/tv_windSpeed"
-                                style="@style/customfontstyle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|start"
-                                android:fontFamily="@font/kanit_light"
-                                android:text="148 km/h" />
-
-                        </LinearLayout>
-
                         <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="end">
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="8dp">
 
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/ic_puntos_cardinales"
-                                app:tint="@color/white" />
+                            <TextView
+                                style="@style/customfontstyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:fontFamily="@font/kanit_extralight"
+                                android:text="@string/humidity_tittle" />
 
-                            <ImageView
-                                android:id="@+id/iv_windDeg"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_centerInParent="true"
-                                android:rotation="-90"
-                                android:scaleX="0.8"
-                                android:scaleY="0.4"
-                                android:src="@drawable/ic_arrow_24"
-                                android:translationX="2.5dp"
-                                app:tint="@color/white" />
+                            <TextView
+                                android:id="@+id/tv_humidity"
+                                style="@style/customfontstyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:fontFamily="@font/kanit_light" />
+
+                            <View
+                                android:id="@+id/separator_humidity"
+                                style="@style/separatorAppereance"
+                                android:layout_below="@id/tv_humidity" />
+
+                            <TextView
+                                style="@style/customfontstyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/separator_humidity"
+                                android:layout_alignParentStart="true"
+                                android:fontFamily="@font/kanit_extralight"
+                                android:text="@string/feels_like_tittle" />
+
+                            <TextView
+                                android:id="@+id/tv_thermal_sensation"
+                                style="@style/customfontstyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/separator_humidity"
+                                android:layout_alignParentEnd="true"
+                                android:fontFamily="@font/kanit_light" />
+
+                            <View
+                                android:id="@+id/separator_thermal_sensation"
+                                style="@style/separatorAppereance"
+                                android:layout_below="@id/tv_thermal_sensation" />
+
+                            <TextView
+                                style="@style/customfontstyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/separator_thermal_sensation"
+                                android:layout_alignParentStart="true"
+                                android:fontFamily="@font/kanit_extralight"
+                                android:text="@string/uv_tittle" />
+
+                            <TextView
+                                android:id="@+id/tv_uv"
+                                style="@style/customfontstyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/separator_thermal_sensation"
+                                android:layout_alignParentEnd="true"
+                                android:fontFamily="@font/kanit_light" />
+
+                            <View
+                                android:id="@+id/separator_uv"
+                                style="@style/separatorAppereance"
+                                android:layout_below="@id/tv_uv" />
+
+                            <TextView
+                                style="@style/customfontstyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/separator_uv"
+                                android:layout_alignParentStart="true"
+                                android:fontFamily="@font/kanit_extralight"
+                                android:text="@string/pressure_tittle" />
+
+                            <TextView
+                                android:id="@+id/tv_pressure"
+                                style="@style/customfontstyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/separator_uv"
+                                android:layout_alignParentEnd="true"
+                                android:fontFamily="@font/kanit_light" />
+
 
                         </RelativeLayout>
 
 
                     </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/navy_blue"
-                        app:cardCornerRadius="20dp">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="start|center"
-                            android:layout_margin="8dp"
-                            android:src="@drawable/ic_sunset"
-                            app:tint="@color/white" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="40dp"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center|start"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/tv_sunrise"
-                                    style="@style/customfontstyle"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="6dp"
-                                    android:fontFamily="@font/kanit_light"
-                                    android:text="07:59" />
-
-                                <TextView
-                                    style="@style/customfontstyle"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/kanit_extralight"
-                                    android:text="Sunrise" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center|start"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/tv_sunset"
-                                    style="@style/customfontstyle"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="6dp"
-                                    android:fontFamily="@font/kanit_light"
-                                    android:text="07:59" />
-
-                                <TextView
-                                    style="@style/customfontstyle"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/kanit_extralight"
-                                    android:text="Sunset" />
-                            </LinearLayout>
-
-
-                        </LinearLayout>
-
-
-                    </androidx.cardview.widget.CardView>
-
                 </LinearLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/navy_blue"
-                    app:cardCornerRadius="20dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:padding="8dp">
-
-                        <TextView
-                            style="@style/customfontstyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:fontFamily="@font/kanit_extralight"
-                            android:text="Humidity" />
-
-                        <TextView
-                            android:id="@+id/tv_humidity"
-                            style="@style/customfontstyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:fontFamily="@font/kanit_light"
-                            android:text="80%" />
-
-                        <View
-                            android:id="@+id/separator_humidity"
-                            style="@style/separatorAppereance"
-                            android:layout_below="@id/tv_humidity" />
-
-                        <TextView
-                            style="@style/customfontstyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/separator_humidity"
-                            android:layout_alignParentStart="true"
-                            android:fontFamily="@font/kanit_extralight"
-                            android:text="Feels like" />
-
-                        <TextView
-                            android:id="@+id/tv_thermal_sensation"
-                            style="@style/customfontstyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/separator_humidity"
-                            android:layout_alignParentEnd="true"
-                            android:fontFamily="@font/kanit_light"
-                            android:text="80%" />
-
-                        <View
-                            android:id="@+id/separator_thermal_sensation"
-                            style="@style/separatorAppereance"
-                            android:layout_below="@id/tv_thermal_sensation" />
-
-                        <TextView
-                            style="@style/customfontstyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/separator_thermal_sensation"
-                            android:layout_alignParentStart="true"
-                            android:fontFamily="@font/kanit_extralight"
-                            android:text="UV" />
-
-                        <TextView
-                            android:id="@+id/tv_uv"
-                            style="@style/customfontstyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/separator_thermal_sensation"
-                            android:layout_alignParentEnd="true"
-                            android:fontFamily="@font/kanit_light"
-                            android:text="80%" />
-
-                        <View
-                            android:id="@+id/separator_uv"
-                            style="@style/separatorAppereance"
-                            android:layout_below="@id/tv_uv" />
-
-                        <TextView
-                            style="@style/customfontstyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/separator_uv"
-                            android:layout_alignParentStart="true"
-                            android:fontFamily="@font/kanit_extralight"
-                            android:text="Pressure" />
-
-                        <TextView
-                            android:id="@+id/tv_pressure"
-                            style="@style/customfontstyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/separator_uv"
-                            android:layout_alignParentEnd="true"
-                            android:fontFamily="@font/kanit_light"
-                            android:text="80%" />
-
-                        <View
-                            android:id="@+id/separator_pressure"
-                            style="@style/separatorAppereance"
-                            android:layout_below="@id/tv_pressure" />
-
-                        <TextView
-                            style="@style/customfontstyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/separator_pressure"
-                            android:layout_alignParentStart="true"
-                            android:fontFamily="@font/kanit_extralight"
-                            android:text="Rain probability" />
-
-                        <TextView
-                            android:id="@+id/tv_rain_probability"
-                            style="@style/customfontstyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/separator_pressure"
-                            android:layout_alignParentEnd="true"
-                            android:fontFamily="@font/kanit_light"
-                            android:text="80%" />
-
-                    </RelativeLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rl_allCards"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/round_top_corners"
-            android:orientation="vertical"
-            android:padding="16dp">
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/customfontstyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/kanit_light"
-                    android:text="Day" />
+                android:layout_height="match_parent"
+                android:layout_below="@id/rl_allCards"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round_top_corners"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center|end"
                     android:orientation="horizontal">
 
                     <TextView
                         style="@style/customfontstyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="20dp"
                         android:fontFamily="@font/kanit_light"
-                        android:text="WX" />
+                        android:text="Day" />
 
-                    <TextView
-                        style="@style/customfontstyle"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:fontFamily="@font/kanit_light"
-                        android:text="Max ºC" />
+                        android:gravity="center|end"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        style="@style/customfontstyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:fontFamily="@font/kanit_light"
-                        android:text="Min ºC" />
+                        <TextView
+                            style="@style/customfontstyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:fontFamily="@font/kanit_light"
+                            android:text="@string/WX" />
 
-                    <TextView
-                        style="@style/customfontstyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kanit_light"
-                        android:text="HUM" />
+                        <TextView
+                            style="@style/customfontstyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:fontFamily="@font/kanit_light"
+                            android:text="@string/max_temperature" />
+
+                        <TextView
+                            style="@style/customfontstyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:fontFamily="@font/kanit_light"
+                            android:text="@string/min_temperature" />
+
+                        <TextView
+                            style="@style/customfontstyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/kanit_light"
+                            android:text="HUM" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_daily_temperatures"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/item_daily_temperatures" />
+
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_daily_temperatures"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listitem="@layout/item_daily_temperatures" />
+            <ProgressBar
+                android:id="@+id/pbLoading"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
 
-        </LinearLayout>
-
-    </RelativeLayout>
 </ScrollView>

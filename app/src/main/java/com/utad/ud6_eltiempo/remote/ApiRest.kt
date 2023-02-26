@@ -7,7 +7,7 @@ object ApiRest {
     lateinit var service: ApiService
     val units = "metric"
     val exclude = "minutely"
-    val URL = "https://api.openweathermap.org/data/3.0/"
+    val URL = "https://api.openweathermap.org/data/"
     val URL_IMAGES = "http://openweathermap.org/img/wn/" // añadir al final-> @2x.png
     val appid = "13e878fd690b4045d4e297c798ef8c35"
     val language = "en"

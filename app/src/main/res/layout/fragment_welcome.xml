@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_blue"
+    tools:context=".welcomeFragment">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_above="@+id/tv_tittle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:src="@drawable/logo_weather" />
+
+    <TextView
+        android:id="@+id/tv_tittle"
+        style="@style/customfontstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kanit_semibold"
+        android:text="Welcome to your \nweather app"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="15dp"
+        />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:backgroundTint="#EB6C4A"
+        android:layout_below="@+id/tv_tittle"
+        android:enabled="true"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#EB6C4A"
+        android:text=""
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        style="@style/customfontstyle"
+        android:fontFamily="@font/kanit_regular"
+        android:layout_below="@+id/btn_start"/>
+
+</RelativeLayout>

@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiService {
-    @GET("onecall?")
+    @GET("3.0/onecall?")
     suspend fun getWeather(
         @Query("lat") lat: Double,
         @Query("lon") lon: Double,
@@ -14,5 +14,12 @@ interface ApiService {
         @Query("lang") lang: String = ApiRest.language,
         @Query("units") units: String = ApiRest.units,
         @Query("exclude") exclude: String = ApiRest.exclude
+    ): Response<WeatherResponse>
+
+    @GET("2.5/onecall?")
+    suspend fun getCity(
+        @Query("lat") lat: Double,
+        @Query("lon") lon: Double,
+        @Query("appid") appid: String = ApiRest.appid,
     ): Response<WeatherResponse>
 }

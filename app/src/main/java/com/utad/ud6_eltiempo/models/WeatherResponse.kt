@@ -35,7 +35,7 @@ data class WeatherResponse(
         val pressure: Int,
         val sunrise: Int,
         val sunset: Int,
-        val temp: Int,
+        val temp: Double,
         val uvi: Double,
         val visibility: Int,
         val weather: List<Weather>,

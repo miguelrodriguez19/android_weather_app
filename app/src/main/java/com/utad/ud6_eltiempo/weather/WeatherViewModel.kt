@@ -12,24 +12,27 @@ import kotlinx.coroutines.launch
 
 class WeatherViewModel : ViewModel() {
     val weatherHourlyList = MutableStateFlow(listOf<WeatherResponse.Hourly>())
-    var actualWeather : WeatherResponse? = null
-    //val loading = MutableStateFlow(false)
+    var weatherCurrent : WeatherResponse.Current? = null
+    var weatherDailyList = MutableStateFlow(listOf<WeatherResponse.Daily>())
+    val loading = MutableStateFlow(false)
     fun getWeather(lat:Double, lon:Double) {
-        //loading.value = true
+        loading.value = true
         val coroutineExceptionHandler : CoroutineExceptionHandler =
             (CoroutineExceptionHandler { _, throwable ->
                 throwable.printStackTrace()
-                //loading.value = false
+                loading.value = false
             })
         viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler , block = {
             val response = ApiRest.service.getWeather(lat, lon)
             if (response.isSuccessful && response.body() != null) {
                 weatherHourlyList.value = response.body()!!.hourly
-                actualWeather = response.body()!!
+                weatherCurrent = response.body()!!.current
+                weatherDailyList.value = response.body()!!.daily
+                //actualWeather = response.body()!!
             } else {
                 Log.i("WeatherViewModel" , "getGenres: ${response.errorBody()?.string() }")
             }
-            //loading.value = false
+            loading.value = false
         })
     }
 }
