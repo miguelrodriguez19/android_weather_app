@@ -135,7 +135,7 @@ class HomeFragment : Fragment() {
             binding.tvSunset.text = formatUnixTime(data.sunset.toLong())
             binding.tvSunrise.text = formatUnixTime(data.sunrise.toLong())
             binding.tvWindSpeed.text = "${data.windSpeed}km/h"
-            binding.ivWindDeg.rotation = data.windDeg.toFloat() - 90
+            binding.ivWindDeg.rotation = data.windDeg.toFloat() + 90
 
             val url = "${ApiRest.URL_IMAGES}${data.weather[0].icon}@2x.png"
             Picasso.get().load(url).into(binding.ivTemperatureIcon)
